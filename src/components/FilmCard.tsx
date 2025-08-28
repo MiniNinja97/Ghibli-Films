@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react"
 import { useFilmStore } from "../store/filmStore"
 import SearchBar from "./SearchBar"
+import { useFavoriteStore } from "../store/favoritesStore"
 
 function FilmList() {
  
   const { films, loading, error, loadFilms } = useFilmStore()
   const [searchText, setSearchText] = useState("")
+  const addFavorite = useFavoriteStore((state) => state.addFavorite)
 
  
   useEffect(() => {
@@ -28,6 +30,7 @@ function FilmList() {
           <h3>{film.title}</h3>
           <p><strong>Regissör:</strong> {film.director}</p>
           <p>{film.description}</p>
+          <button onClick={() => addFavorite(film)}>Lägg till i favoriter</button>
           <img src={film.image} alt={film.title} />
         </div>
       ))}
