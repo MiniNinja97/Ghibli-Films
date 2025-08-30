@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useFilmStore } from "../store/filmStore"
 import SearchBar from "./SearchBar"
 import { useFavoriteStore } from "../store/favoritesStore"
+import "../styles/filmCard.css"
 
 function FilmList() {
  
@@ -22,8 +23,10 @@ function FilmList() {
   if (error) return <p>{error}</p>
 
   return (
-  <div>
-    <SearchBar searchText={searchText} setSearchText={setSearchText} />
+  <div className="film-list-container">
+    <div className="search-bar-wrapper">
+  <SearchBar searchText={searchText} setSearchText={setSearchText} />
+</div>
     <div className="film-list">
       {filteredFilms.map((film) => (
         <div key={film.id} className="film-card">

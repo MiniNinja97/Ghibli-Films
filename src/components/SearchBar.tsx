@@ -1,5 +1,5 @@
 
-
+import "../styles/filmCard.css"
 interface SearchBarProps {
     searchText: string;
     setSearchText: (text: string) => void;
@@ -8,7 +8,7 @@ interface SearchBarProps {
 function SearchBar({ searchText, setSearchText }: SearchBarProps) {
     return (
         <div className="search-bar">
-            <input
+            <input className="search-input"
                 type="text"
                 value={searchText}
                 onChange={(e) => setSearchText(e.target.value)}

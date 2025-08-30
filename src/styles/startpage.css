@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap');
 
-/* App container som flex column */
 .app-container {
-  display: flex;
-  flex-direction: column;
+  position: relative;
   min-height: 100vh;
 }
 
-/* SnowBackground längst bak */
+/* Snö längst bak */
 .snow-background {
   position: fixed;
   top: 0;
@@ -17,20 +15,12 @@
   z-index: -1;
 }
 
-.eyes-effect {
-  position: fixed;
-  top: 0;       /* justera under header om du vill */
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;   /* mellan snön (-1) och innehållet (1) */
-  pointer-events: none;
-}
+
+
 .app {
   position: relative;
-  z-index: 1;
+  z-index: 1; /* header/nav ovanför canvas */
   text-align: center;
-  background-color: transparent; 
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -39,28 +29,26 @@
 }
 
 .rubrik {
-    font-family: 'Coming Soon', cursive;
-    /* font-size: 3rem; */
-    color: white;
-    text-shadow: 4px 4px 25px #555555;
-    margin-top: 2.5em;
-    margin-bottom: 2em;
+  font-family: 'Coming Soon', cursive;
+  color: white;
+  text-shadow: 4px 4px 25px #555555;
+  margin-top: 2.5em;
+  margin-bottom: 2em;
 }
-
-
-
 
 a,
 a:visited,
 a:active {
-    font-size: 2em;
-    padding: 1.5em;
-    font-family: 'Coming Soon', cursive;
+  font-size: 2em;
+  padding: 1.5em;
+  font-family: 'Coming Soon', cursive;
   color: white;
-  text-decoration: none; 
+  text-decoration: none;
 }
-
 
 a:hover {
   color: lightgray;
 }
+
+
+

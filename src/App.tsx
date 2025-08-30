@@ -1,6 +1,5 @@
-
+// @ts-ignore
 import SnowBackground from "./SnowBackground";
-import EyesEffect from "./eyesEffect"; 
 
 import { NavLink, Outlet } from "react-router-dom";
 import "./styles/startpage.css";
@@ -9,7 +8,6 @@ function App() {
   return (
     <div className="app-container">
       <SnowBackground className="snow-background" />
-      <EyesEffect className="eyes-effect" />
 
       <div className="app">
         <header>
@@ -31,4 +29,6 @@ function App() {
 }
 
 export default App;
+
+
 

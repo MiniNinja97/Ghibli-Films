@@ -1,4 +1,5 @@
 import { useFavoriteStore } from "../store/favoritesStore";
+import "../styles/filmCard.css"
 
 function FavoriteFilms() {
   const { favorites, removeFavorite } = useFavoriteStore();
@@ -6,9 +7,9 @@ function FavoriteFilms() {
   if (favorites.length === 0) return <p>Du har inte lagt till några filmer i favoriter ännu!</p>;
 
   return (
-    <div>
+    <div className="film-list-container">
       <h2>Mina Favoritfilmer</h2>
-      <div className="favorite-films">
+      <div className="film-list">
         {favorites.map((film) => (
           <div key={film.id} className="film-card">
             <h3>{film.title}</h3>
