@@ -5,7 +5,6 @@
   min-height: 100vh;
 }
 
-/* Snö längst bak */
 .snow-background {
   position: fixed;
   top: 0;
@@ -19,7 +18,7 @@
 
 .app {
   position: relative;
-  z-index: 1; /* header/nav ovanför canvas */
+  z-index: 1; 
   text-align: center;
   min-height: 100vh;
   display: flex;

@@ -12,10 +12,10 @@ const useFavoriteStore = create<FavoriteStore>((set) => ({
 
   addFavorite: (film) =>
     set((state) => {
-      // Vi kollar om filmen redan finns i favoriter
+      
       const exists = state.favorites.find((f) => f.id === film.id);
-      if (exists) return state; // om den finns, gör inget
-      return { favorites: [...state.favorites, film] }; // annars lägg till filmen
+      if (exists) return state;
+      return { favorites: [...state.favorites, film] }; 
     }),
 
   removeFavorite: (filmId) =>
