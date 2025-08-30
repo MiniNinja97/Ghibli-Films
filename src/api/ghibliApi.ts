@@ -1,3 +1,6 @@
+import { filmsArraySchema } from "../validation/filmValidation"
+
+
 export interface Film {
     id: string
   title: string
@@ -20,9 +23,14 @@ export async function fetchFilms(limit: number = 250): Promise<Film[]> {
         }
         const data: Film[] = await response.json()
         console.log("From API:", data)
-        return data
+        const films = filmsArraySchema.parse(data)
+    return films
+
+        // return data
     } catch (error) {
         console.error("Error fetching films:", error)
         throw error
     }
+
+    
 }
